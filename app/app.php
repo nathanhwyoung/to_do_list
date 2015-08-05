@@ -14,7 +14,7 @@
 
         $output = "";
 
-        $all_Tasks = Task::getAll();
+        $all_tasks = Task::getAll();
 
         if (!empty($all_tasks)) {
             $output = $output . "
