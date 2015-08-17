@@ -5,20 +5,14 @@
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/Task.php";
 
-    // starts the $_SESSION superglobal variable, which is an array of arrays
-
-    session_start();
-
-    // checks to see if the SESSION variable is empty at the specified key.
-    // if it is empty, creates an array at that key
-
-    if (empty($_SESSION['list_of_tasks'])) {
-        $_SESSION['list_of_tasks'] = array();
-    }
-
     // creates a new Silex\Application object
 
     $app = new Silex\Application();
+
+    $server = 'mysql:host=localhost;dbname=to_do';
+    $username = 'root';
+    $password = 'root';
+    $DB = new PDO($server, $username, $password);
 
     // makes the twig library available to the application and tells twig to look for our template
     // in the views folder
