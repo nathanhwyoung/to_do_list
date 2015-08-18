@@ -13,6 +13,8 @@
                     <li>{{ task.getDescription }}</li>
                 {% endfor %}
             </ul>
+        {% else %}
+            <p>EMPTY SET</p>
         {% endif %}
 
         <form action='/tasks' method='post'>

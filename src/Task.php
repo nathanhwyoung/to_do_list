@@ -5,7 +5,7 @@ class Task
     private $id;
     private $category_id;
 
-    function __construct($description, $id = null, $category_id)
+    function __construct($description, $id = null, $category_id = null)
     {
         $this->description = $description;
         $this->id = $id;
