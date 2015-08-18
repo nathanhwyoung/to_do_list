@@ -22,8 +22,6 @@
 
         function getId()
         {
-            // $id = $GLOBALS['DB']->query("SELECT * FROM categories WHERE name = ('{$this->getName()}');");
-            // return $id;
             return $this->id;
         }
 
@@ -31,7 +29,6 @@
         {
             $GLOBALS['DB']->exec("INSERT INTO categories (name) VALUES ('{$this->getName()}');");
             $this->id = $GLOBALS['DB']->lastInsertId();
-            //var_dump($this->id);
         }
 
         function getTasks()

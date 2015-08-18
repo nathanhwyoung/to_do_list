@@ -37,7 +37,6 @@
 
             //act
             $result = $test_task->getId();
-            //var_dump($result);
 
             //
             $this->assertEquals(true, is_numeric($result));
@@ -147,18 +146,13 @@
             $test_task->save();
 
             $description2 = "Water the lawn";
-            //$category_id = $test_category->getId();
             $test_task2 = new Task($description2, $id, $category_id);
             $test_task2->save();
 
             //act
-            // $task_to_find = "Wash the dog";
-            // $result = (Task::find($test_task->find($task_to_find)));
-            // $answer = array(["Wash the dog"]);
             $result = Task::find($test_task->getId());
 
             //assert
-            //$this->assertEquals($answer, $result);
             $this->assertEquals($test_task, $result);
         }
     }
