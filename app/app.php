@@ -53,5 +53,10 @@
         return $app['twig']->render('index.html.twig');
     });
 
+    $app->get("/task_results", function() use ($app) {
+        $results_array = (Task::find($_GET['task_form']));
+        return $app['twig']->render('results.html.twig', array('found_tasks' => $results_array));
+    });
+
     return $app;
 ?>

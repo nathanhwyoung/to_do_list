@@ -1,0 +1,21 @@
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>To Do List</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Results!</h1>
+        <p>
+            {% if found_tasks is not empty %}
+            <ul>
+                {% for task in found_tasks %}
+                    <li>{{ task.getDescription }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </p>
+        <p><a href='/'>Home</a></p>
+    </div>
+</body>
+</html>

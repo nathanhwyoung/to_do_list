@@ -49,17 +49,18 @@ class Task
         $GLOBALS['DB']->exec("DELETE FROM tasks;");
     }
 
-    static function find($search_id)
+    static function find($search_name)
     {
-        $found_task = null;
+        $found_tasks = array();
         $tasks = Task::getAll();
         foreach($tasks as $task) {
-            $task_id = $task->getId();
-            if ($task_id == $search_id) {
-                $found_task = $task;
+            $task_name = $task->getDescription();
+            if (strpos($task_name, $search_name) !== false) {
+                array_push($found_tasks, $task);
             }
         }
-        return $found_task;
+        // return array of tasks (objects)
+        return $found_tasks;
     }
 }
 ?>
