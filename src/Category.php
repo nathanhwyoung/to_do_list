@@ -22,20 +22,23 @@
 
         function getId()
         {
+            // $id = $GLOBALS['DB']->query("SELECT * FROM categories WHERE name = ('{$this->getName()}');");
+            // return $id;
             return $this->id;
         }
 
         function save()
         {
-            $GLOBALS['DB']->exec("INSERT INTO categories (name) VALUES ('{$this->getName()}')");
-            $this->id= $GLOBALS['DB']->lastInsertId();
+            $GLOBALS['DB']->exec("INSERT INTO categories (name) VALUES ('{$this->getName()}');");
+            $this->id = $GLOBALS['DB']->lastInsertId();
+            //var_dump($this->id);
         }
 
         function getTasks()
         {
             $tasks = array();
-            $returned_tasks = $GLOBALS['DB']->query("SELECT * FROM tasks WHERE category_id = {$this->getId()};");
-            foreach($returned_tasks as $task){
+            $returned_tasks = $GLOBALS['DB']->query("SELECT * FROM tasks WHERE (category_id) = {$this->getId()};");
+            foreach($returned_tasks as $task) {
                 $description = $task['description'];
                 $id = $task['id'];
                 $category_id = $task['category_id'];

@@ -58,6 +58,7 @@
 
             //Act
             $result = Category::getAll();
+            //var_dump($result);
 
             //Assert
             $this->assertEquals($test_Category, $result[0]);
