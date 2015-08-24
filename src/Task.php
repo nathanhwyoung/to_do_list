@@ -80,7 +80,6 @@ class Task
                 array_push($found_tasks, $task);
             }
         }
-        // return array of tasks (objects)
         return $found_tasks;
     }
 }

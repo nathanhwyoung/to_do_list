@@ -27,7 +27,7 @@
 
         function save()
         {
-            $GLOBALS['DB']->exec("INSERT INTO categories (name) VALUES ('{$this->getName()}');");
+            $GLOBALS['DB']->exec("INSERT INTO categories (name) VALUES ('{$this->getName()}')");
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
@@ -47,7 +47,8 @@
 
         static function getAll()
         {
-            $returned_categories = $GLOBALS['DB']->query("SELECT * FROM categories;");
+          $returned_categories = $GLOBALS['DB']->query("SELECT * FROM categories;");
+            //var_dump($returned_categories);
             $categories = array();
             foreach($returned_categories as $category) {
                 $name = $category['name'];
