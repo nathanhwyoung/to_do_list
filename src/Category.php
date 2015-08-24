@@ -67,7 +67,7 @@
             $found_category = null;
             $categories = Category::getAll();
             foreach($categories as $category) {
-                $category_id = $category->getId();
+                $category_id = $category->getId();                
                 if ($category_id == $search_id) {
                   $found_category = $category;
                 }

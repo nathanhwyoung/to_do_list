@@ -3,10 +3,11 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
     <title>To Do List</title>
 </head>
-<body>
+<body style="background-color:silver">
     <div class='container'>
 
         <h1>{{ category.getName }}</h1>
+        <hr>
 
         {% if tasks is not empty %}
             <p>Here are the tasks for this category:</p>
@@ -16,6 +17,8 @@
                 {% endfor %}
             </ul>
         {% endif %}
+
+        <hr>
 
         <h4>Add a task to this category:</h4>
 

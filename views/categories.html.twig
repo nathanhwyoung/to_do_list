@@ -3,7 +3,7 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
     <title>To Do List</title>
 </head>
-<body>
+<body style="background-color:silver">
 
     <div class='container'>
 
@@ -19,11 +19,13 @@
         {% endif %}
 
         <form action='/categories' method='post'>
+
             <label for='name'>Category name</label>
             <input id='name' name='name' type='text'>
 
             <button type='submit'>Add category</button>
         </form>
+
         <form action='/delete_categories' method='post'>
             <button type='submit'>Clear</button>
         </form>
