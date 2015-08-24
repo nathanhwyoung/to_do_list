@@ -3,11 +3,13 @@
     {
         private $description;
         private $id;
+        private $completed;
 
-        function __construct($description, $id = null)
+        function __construct($description, $id = null, $completed = false)
         {
             $this->description = $description;
             $this->id = $id;
+            $this->completed = $completed;
         }
 
         function setDescription($new_description)
@@ -25,9 +27,19 @@
             return $this->id;
         }
 
+        function setCompleted($new_completed)
+        {
+            $this->completed = (bool) $new_completed;
+        }
+
+        function getCompleted()
+        {
+            return $this->completed;
+        }
+
         function save()
         {
-            $GLOBALS['DB']->exec("INSERT INTO tasks (description) VALUES ('{$this->getDescription()}');");
+            $GLOBALS['DB']->exec("INSERT INTO tasks (description, completed) VALUES ('{$this->getDescription()}');");
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
@@ -38,7 +50,8 @@
             foreach($returned_tasks as $task) {
                 $description = $task['description'];
                 $id = $task['id'];
-                $new_task = new Task($description, $id);
+                $completed = $task['completed'];
+                $new_task = new Task($description, $id, $completed);
                 array_push($tasks, $new_task);
             }
             return $tasks;

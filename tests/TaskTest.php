@@ -68,7 +68,8 @@
           //Arrange
           $description = "Wash the dog";
           $id = 1;
-          $test_task = new Task($description, $id);
+          $completed = false;
+          $test_task = new Task($description, $id, $completed);
 
           //Act
           $test_task->save();
@@ -83,7 +84,8 @@
             //Arrange
             $description = "Wash the dog";
             $id = 1;
-            $test_task = new Task($description, $id);
+            $completed = false;
+            $test_task = new Task($description, $id, $completed);
 
             //Act
             $test_task->save();
@@ -97,12 +99,14 @@
             //arrange
             $description = "Wash the dog";
             $id = 1;
-            $test_task = new Task($description, $id);
+            $completed = false;
+            $test_task = new Task($description, $id, $completed);
             $test_task->save();
 
             $description2 = "Water the lawn";
             $id2 = 2;
-            $test_task2 = new Task($description2, $id);
+            $completed2 = false;
+            $test_task2 = new Task($description2, $id, $completed2);
             $test_task2->save();
 
             //act
@@ -117,12 +121,14 @@
             //arrange
             $description = "Wash the dog";
             $id = 1;
-            $test_task = new Task($description, $id);
+            $completed = false;
+            $test_task = new Task($description, $id, $completed);
             $test_task->save();
 
             $description2 = "Water the lawn";
             $id2 = 2;
-            $test_task2 = new Task($description2, $id);
+            $completed2 = false;
+            $test_task2 = new Task($description2, $id, $completed2);
             $test_task2->save();
 
             //act
@@ -138,12 +144,14 @@
             //arrange
             $description = "Wash the dog";
             $id = 1;
-            $test_task = new Task($description, $id);
+            $completed = false;
+            $test_task = new Task($description, $id, $completed);
             $test_task->save();
 
             $description2 = "Water the lawn";
             $id2 = 2;
-            $test_task2 = new Task($description2, $id);
+            $completed2 = false;
+            $test_task2 = new Task($description2, $id, $completed2);
             $test_task2->save();
 
             //act
@@ -158,7 +166,8 @@
             //Arrange
             $description = "Wash the dog";
             $id = 1;
-            $test_task = new Task($description, $id);
+            $completed = false;
+            $test_task = new Task($description, $id, $completed);
             $test_task->save();
 
             $new_description = "Clean the dog";
@@ -175,12 +184,14 @@
             //Arrange
             $description = "Wash the dog";
             $id = 1;
-            $test_task = new Task($description, $id);
+            $completed = false;
+            $test_task = new Task($description, $id, $completed);
             $test_task->save();
 
             $description2 = "Water the lawn";
             $id2 = 2;
-            $test_task2 = new Task($description2, $id2);
+            $completed2 = false;
+            $test_task2 = new Task($description2, $id2, $completed2);
             $test_task2->save();
 
 
@@ -196,12 +207,14 @@
             //arrange
             $name = "Work stuff";
             $id = 1;
-            $test_category = new Category($name, $id);
+            $completed = false;
+            $test_category = new Category($name, $id, $completed);
             $test_category->save();
 
             $description = "File reports";
             $id2 = 2;
-            $test_task = new Task($description, $id2);
+            $completed2 = false;
+            $test_task = new Task($description, $id2, $completed2);
             $test_task->save();
 
             //Act
@@ -221,12 +234,14 @@
 
             $name2 = "Volunteer stuff";
             $id2 = 2;
-            $test_category2 = new Category($name2, $id2);
+            $completed = false;
+            $test_category2 = new Category($name2, $id2, $completed);
             $test_category2->save();
 
             $description = "File reports";
             $id3 = 3;
-            $test_task = new Task($description, $id3);
+            $completed2 = false;
+            $test_task = new Task($description, $id3, $completed2);
             $test_task->save();
 
             //Act
@@ -242,12 +257,14 @@
             //Arrange
             $name = "Work stuff";
             $id = 1;
-            $test_category = new Category($name, $id);
+            $completed = false;
+            $test_category = new Category($name, $id, $completed);
             $test_category->save();
 
             $description = "File reports";
             $id2 = 2;
-            $test_task = new Task($description, $id2);
+            $completed2 = false;
+            $test_task = new Task($description, $id2, $completed2);
             $test_task->save();
 
             //Act

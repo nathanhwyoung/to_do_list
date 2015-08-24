@@ -67,7 +67,7 @@
             $found_category = null;
             $categories = Category::getAll();
             foreach($categories as $category) {
-                $category_id = $category->getId();                
+                $category_id = $category->getId();
                 if ($category_id == $search_id) {
                   $found_category = $category;
                 }
@@ -78,7 +78,7 @@
         function addTask($task)
         {
             $GLOBALS['DB']->exec("INSERT INTO categories_tasks (category_id,
-                task_id) VALUES ({$this->getId()}, {$task->getId()});");
+                task_id) VALUES ({$this->getId()}, {$task->getId()}, {$task->getCompleted()});");
         }
 
         function getTasks()
