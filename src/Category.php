@@ -31,18 +31,15 @@
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
-        function getTasks()
+        function update($new_name)
         {
-            $tasks = array();
-            $returned_tasks = $GLOBALS['DB']->query("SELECT * FROM tasks WHERE (category_id) = {$this->getId()};");
-            foreach($returned_tasks as $task) {
-                $description = $task['description'];
-                $id = $task['id'];
-                $category_id = $task['category_id'];
-                $new_task = new Task($description, $id, $category_id);
-                array_push($tasks, $new_task);
-            }
-            return $tasks;
+            $GLOBALS['DB']->exec("UPDATE categories SET name = '{$new_name}' WHERE id = {$this->getId()};");
+            $this->setName($new_name);
+        }
+
+        function delete()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM categories WHERE id = {$this->getId()};");
         }
 
         static function getAll()

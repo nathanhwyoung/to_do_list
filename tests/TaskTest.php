@@ -52,7 +52,7 @@
         {
 
             //arrange
-            $name = "Home Stuff";
+            $id = 1;
             $description = "Wash the dog";
             $test_task = new Task($description, $id);
 
